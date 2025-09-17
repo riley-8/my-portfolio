@@ -4,10 +4,10 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000; // Use port from environment variable if available
+const port = 3000;
 
-// Get the correct path to the frontend directory, now located inside the deployment package
-const frontendPath = path.join(__dirname, 'frontend');
+// Get the correct path to the frontend directory
+const frontendPath = path.join(__dirname, '../frontend');
 
 // --- Middleware ---
 // 1. CORS for allowing cross-origin requests
@@ -37,13 +37,13 @@ app.get('/projects', (req, res) => {
 
 // --- Catch-all Route ---
 // For any other route, serve the main index.html file
+// This should be the LAST route defined
 app.get('*', (req, res) => {
-  // Correct the path to index.html inside the 'frontend' directory
   res.sendFile(path.join(frontendPath, 'html', 'index.html'));
 });
 
 // --- Start Server ---
 app.listen(port, () => {
-  console.log(`✅ Backend server is live and listening on port ${port}`);
+  console.log(`✅ Backend server is live and listening at http://localhost:${port}`);
   console.log(`Serving static files from: ${frontendPath}`);
 });
