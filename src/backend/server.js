@@ -6,15 +6,14 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// The 'release' folder is the root in the Azure environment.
-// So, __dirname will be the 'release' folder.
-const frontendPath = path.join(__dirname, 'frontend');
+// All static assets are now in the 'public' directory.
+const publicPath = path.join(__dirname, 'public');
 
 // Middleware
 app.use(cors());
 
-// Serve all static files from the 'frontend' directory
-app.use(express.static(frontendPath));
+// Serve all static files from the 'public' directory
+app.use(express.static(publicPath));
 
 // API endpoint to get project data
 app.get('/projects', (req, res) => {
@@ -37,7 +36,7 @@ app.get('/projects', (req, res) => {
 // Catch-all route for Single Page Applications (SPA)
 // This should be the LAST route.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(frontendPath, 'html', 'index.html'));
+  res.sendFile(path.join(publicPath, 'html', 'index.html'));
 });
 
 // Start Server
