@@ -62,4 +62,4 @@ jobs:
         with:
           app-name: 'kwazi-portfolio'
           slot-name: 'Production'
-          package: src/backend
+          package: .
