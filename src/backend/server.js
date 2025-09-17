@@ -4,10 +4,11 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+// Use the port Azure provides, or 3000 for local development
+const port = process.env.PORT || 3000;
 
-// Get the correct path to the frontend directory
-const frontendPath = path.join(__dirname, '../frontend');
+// In the Azure environment, the 'frontend' directory will be at the root level.
+const frontendPath = path.join(__dirname, 'frontend');
 
 // --- Middleware ---
 // 1. CORS for allowing cross-origin requests
@@ -18,11 +19,13 @@ app.use(express.static(frontendPath));
 
 // --- API Routes ---
 // API endpoint to get project data
+// projects.json will be at the root level with the server.js file
 app.get('/projects', (req, res) => {
   const projectsPath = path.join(__dirname, 'projects.json');
   fs.readFile(projectsPath, 'utf8', (err, data) => {
     if (err) {
       console.error("Error reading projects.json:", err);
+      // In a production environment, you might want to send a more generic error message
       return res.status(500).json({ error: 'Failed to load project data' });
     }
     try {
@@ -36,14 +39,15 @@ app.get('/projects', (req, res) => {
 });
 
 // --- Catch-all Route ---
-// For any other route, serve the main index.html file
-// This should be the LAST route defined
+// For any other route, serve the main index.html file.
+// This is crucial for single-page applications.
+// This should be the LAST route defined.
 app.get('*', (req, res) => {
   res.sendFile(path.join(frontendPath, 'html', 'index.html'));
 });
 
 // --- Start Server ---
 app.listen(port, () => {
-  console.log(`✅ Backend server is live and listening at http://localhost:${port}`);
+  console.log(`✅ Backend server is live and listening on port ${port}`);
   console.log(`Serving static files from: ${frontendPath}`);
 });
