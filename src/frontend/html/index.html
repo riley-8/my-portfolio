@@ -102,7 +102,7 @@
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="project-carousel">
-                <article class="project-card">
+                <article class="project-card" data-project-id="neon-dreams">
                     <h3>Neon Dreams Game</h3>
                     <div class="project-tags">
                         <span class="project-tag">Unreal Engine 5</span>
@@ -113,7 +113,7 @@
                     <button class="project-details">View Project</button>
                 </article>
                 
-                <article class="project-card">
+                <article class="project-card" data-project-id="ecotracker">
                     <h3>EcoTracker Dashboard</h3>
                     <div class="project-tags">
                         <span class="project-tag">React</span>
@@ -124,7 +124,7 @@
                     <button class="project-details">View Project</button>
                 </article>
                 
-                <article class="project-card">
+                <article class="project-card" data-project-id="api-gateway">
                     <h3>API Gateway</h3>
                     <div class="project-tags">
                         <span class="project-tag">Node.js</span>
@@ -135,7 +135,7 @@
                     <button class="project-details">View Project</button>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-project-id="portfolio-website">
                     <h3>Portfolio Website</h3>
                     <div class="project-tags">
                         <span class="project-tag">HTML5</span>
@@ -200,6 +200,16 @@
             </ul>
         </nav>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal-backdrop" class="modal-backdrop">
+        <div id="project-modal" class="modal">
+            <button id="modal-close-btn" class="modal-close" aria-label="Close modal">&times;</button>
+            <div id="modal-content">
+                <!-- Project details will be injected here by script.js -->
+            </div>
+        </div>
+    </div>
 
     <script src="../js/script.js"></script>
 </body>
