@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Using ubuntu for consistency and command compatibility
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -26,18 +26,12 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-      
-      - name: Remove node_modules before artifact upload
-        run: rm -rf node_modules
-
-      - name: Zip artifact for deployment
-        run: zip -r deployment.zip . 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: deployment.zip
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -65,4 +59,4 @@ jobs:
         with:
           app-name: 'kwazi-portfolio'
           slot-name: 'Production'
-          package: 'deployment.zip'
+          package: .
