@@ -177,4 +177,59 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+
+  // --- KND NAME ANIMATION --- //
+  const nameEl = document.querySelector('.knd-name');
+  const name = 'Kwazi Ngidi';
+  const textSpan = document.createElement('span');
+  const cursorSpan = document.createElement('span');
+  cursorSpan.classList.add('cursor');
+  nameEl.appendChild(textSpan);
+  nameEl.appendChild(cursorSpan);
+
+  async function kndAnimation() {
+    nameEl.classList.remove('matrix-blink');
+    textSpan.textContent = '';
+    cursorSpan.style.opacity = '1';
+    
+    // Typing
+    for (let i = 0; i < name.length; i++) {
+      textSpan.textContent += name[i];
+      await new Promise(resolve => setTimeout(resolve, 90));
+    }
+    
+    // Set data-text for glitch effect
+    nameEl.setAttribute('data-text', name);
+
+    // Blinking with glitch
+    let blinkCount = 0;
+    const blinkInterval = setInterval(() => {
+        
+        if (cursorSpan.style.opacity === '0') {
+            cursorSpan.style.opacity = '1';
+            nameEl.classList.add('matrix-blink');
+        } else {
+            cursorSpan.style.opacity = '0';
+            nameEl.classList.remove('matrix-blink');
+        }
+        
+        blinkCount++;
+      if (blinkCount === 10) { // 5 blinks (on and off)
+        clearInterval(blinkInterval);
+        
+        // Deleting
+        async function deleteAnimation() {
+          nameEl.classList.remove('matrix-blink');
+          for (let i = name.length; i >= 0; i--) {
+            textSpan.textContent = name.substring(0, i);
+            await new Promise(resolve => setTimeout(resolve, 150));
+          }
+          kndAnimation(); // Loop
+        }
+        deleteAnimation();
+      }
+    }, 500); // Sync with cursor blink animation
+  }
+
+  kndAnimation();
 });
