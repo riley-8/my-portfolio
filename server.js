@@ -33,12 +33,6 @@ app.get('/projects', (req, res) => {
   });
 });
 
-// Catch-all route for Single Page Applications (SPA)
-// This should be the LAST route.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'html', 'index.html'));
-});
-
 // Start Server
 app.listen(port, () => {
   console.log(`✅ Backend server is live and listening on port ${port}`);
