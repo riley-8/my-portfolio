@@ -1,5 +1,6 @@
+
 /**
- * Huey Freeman's Portfolio - Enhanced JavaScript
+ * Huey Freeman'''s Portfolio - Enhanced JavaScript
  * Complete with fixed Matrix animation and all interactive elements
  */
 
@@ -155,34 +156,61 @@ const initContactForm = () => {
     });
 };
 
-// ==================== PROJECT MODAL ====================
-const initProjectModal = () => {
+// ==================== PROJECT HANDLING ====================
+const initProjects = () => {
+    const projectCarousel = document.querySelector('.project-carousel');
     const modalBackdrop = document.getElementById('project-modal-backdrop');
     const modalContent = document.getElementById('modal-content');
     const closeBtn = document.getElementById('modal-close-btn');
-    const projectButtons = document.querySelectorAll('.project-details');
     let projectsData = [];
 
     // Fetch project data from the backend
     const fetchProjects = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/projects');
+            const response = await fetch('/api/projects');
             if (!response.ok) throw new Error('Network response was not ok');
             projectsData = await response.json();
+            renderProjects();
         } catch (error) {
             console.error('Failed to fetch projects:', error);
-            modalContent.innerHTML = '<p>Error loading project details. Please try again later.</p>';
+            projectCarousel.innerHTML = '<p style="color: var(--primary);">Error loading projects. Please try again later.</p>';
         }
+    };
+
+    const renderProjects = () => {
+        projectCarousel.innerHTML = ''; // Clear loaders or old content
+
+        projectsData.forEach(project => {
+            const projectCard = document.createElement('article');
+            projectCard.className = 'project-card';
+            projectCard.dataset.projectId = project.id;
+
+            const tagsHtml = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
+            
+            // Create a short description from the long one
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = project.long_description;
+            const shortDescription = tempDiv.textContent.trim().split('.')[0] + '...';
+
+            projectCard.innerHTML = `
+                <h3>${project.title}</h3>
+                <div class="project-tags">${tagsHtml}</div>
+                <p>${shortDescription}</p>
+                <button class="project-details">View Project</button>
+            `;
+
+            projectCarousel.appendChild(projectCard);
+        });
+
+        // Re-attach event listeners for the new cards
+        initProjectModalListeners();
     };
 
     const openModal = (projectId) => {
         const project = projectsData.find(p => p.id === projectId);
         if (!project) return;
 
-        // Create tag elements
         const tagsHtml = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
-        
-        // Create buttons, handling the case where a link might be null
         const sourceButton = project.source_code_link ? `<a href="${project.source_code_link}" target="_blank" rel="noopener noreferrer">Source Code</a>` : '';
         const demoButton = project.live_demo_link ? `<a href="${project.live_demo_link}" target="_blank" rel="noopener noreferrer">Live Demo</a>` : '';
 
@@ -196,7 +224,7 @@ const initProjectModal = () => {
             </div>
         `;
         modalBackdrop.classList.add('visible');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden'; 
     };
 
     const closeModal = () => {
@@ -204,15 +232,17 @@ const initProjectModal = () => {
         document.body.style.overflow = 'auto';
     };
 
-    projectButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const card = button.closest('.project-card');
-            const projectId = card.dataset.projectId;
-            if (projectId) {
-                openModal(projectId);
-            }
+    const initProjectModalListeners = () => {
+        document.querySelectorAll('.project-details').forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.project-card');
+                const projectId = card.dataset.projectId;
+                if (projectId) {
+                    openModal(projectId);
+                }
+            });
         });
-    });
+    };
 
     closeBtn.addEventListener('click', closeModal);
     modalBackdrop.addEventListener('click', (e) => {
@@ -238,17 +268,17 @@ const initScrollAnimations = () => {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                obs.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+    document.querySelectorAll('section, .project-card, .skill-category, .timeline li').forEach(el => {
+        observer.observe(el);
     });
 };
 
@@ -265,7 +295,7 @@ const handleInitialScroll = () => {
         const target = document.querySelector(window.location.hash);
         if (target) {
             setTimeout(() => {
-                target.scrollIntoView();
+                target.scrollIntoView({ behavior: 'smooth' });
             }, 100);
         }
     }
@@ -273,17 +303,25 @@ const handleInitialScroll = () => {
 
 // ==================== INITIALIZATION ====================
 const initPortfolio = () => {
-    initMatrixBackground();
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        initMatrixBackground();
+        initScrollAnimations();
+    } else {
+        // Fallback for reduced motion: just make sections visible
+        document.querySelectorAll('section, .project-card, .skill-category, .timeline li').forEach(el => {
+            el.classList.add('visible');
+        });
+    }
+
     initSmoothScrolling();
     initContactForm();
-    initProjectModal();
-    initScrollAnimations();
+    initProjects();
     updateCopyrightYear();
     handleInitialScroll();
 };
 
 // Start everything when DOM is ready
 document.addEventListener('DOMContentLoaded', initPortfolio);
-
-// Handle window load
-window.addEventListener('load', handleInitialScroll);
