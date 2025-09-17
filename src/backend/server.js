@@ -9,6 +9,9 @@ const port = 3000;
 // Use CORS to allow requests from your frontend
 app.use(cors());
 
+// Serve static files from the "frontend" directory
+app.use(express.static(path.join(__dirname, '../frontend')));
+
 // API endpoint to get project data
 app.get('/api/projects', (req, res) => {
   const projectsPath = path.join(__dirname, 'projects.json');
@@ -19,6 +22,11 @@ app.get('/api/projects', (req, res) => {
     }
     res.json(JSON.parse(data));
   });
+});
+
+// For any other route, serve the index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/html/index.html'));
 });
 
 app.listen(port, () => {
