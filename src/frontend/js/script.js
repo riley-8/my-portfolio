@@ -177,4 +177,42 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+
+  // --- KND NAME ANIMATION --- //
+  const nameEl = document.querySelector('.knd-name');
+  const name = 'Kwazi Ngidi';
+  const textSpan = document.createElement('span');
+  const cursorSpan = document.createElement('span');
+  cursorSpan.classList.add('cursor');
+  nameEl.appendChild(textSpan);
+  nameEl.appendChild(cursorSpan);
+
+  async function kndAnimation() {
+    // Typing
+    for (let i = 0; i < name.length; i++) {
+      textSpan.textContent += name[i];
+      await new Promise(resolve => setTimeout(resolve, 90));
+    }
+
+    // Blinking
+    let blinkCount = 0;
+    const blinkInterval = setInterval(() => {
+      cursorSpan.style.opacity = (cursorSpan.style.opacity === '0') ? '1' : '0';
+      blinkCount++;
+      if (blinkCount === 10) { // 5 blinks (on and off)
+        clearInterval(blinkInterval);
+        // Deleting
+        async function deleteAnimation() {
+          for (let i = name.length; i >= 0; i--) {
+            textSpan.textContent = name.substring(0, i);
+            await new Promise(resolve => setTimeout(resolve, 150));
+          }
+          kndAnimation(); // Loop
+        }
+        deleteAnimation();
+      }
+    }, 250);
+  }
+
+  kndAnimation();
 });
