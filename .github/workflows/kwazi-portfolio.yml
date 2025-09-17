@@ -26,19 +26,12 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-        working-directory: src/backend
       
-      - name: Prepare deployment package
-        run: |
-          mkdir -p release
-          cp -r src/backend/* release/
-          cp -r src/frontend release/
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release/
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
