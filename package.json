@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "Backend for my portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "install": "npm install"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "http-proxy": "^1.18.1"
+  }
+}
