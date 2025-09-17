@@ -1,34 +1,34 @@
 [
   {
-    "id": "neon-dreams",
-    "title": "Neon Dreams Game",
-    "tags": ["Unreal Engine 5", "Blueprints", "C++", "VFX"],
-    "long_description": "<p>Neon Dreams is a fast-paced, cyberpunk-themed action game built in Unreal Engine 5. The project showcases advanced visual effects, including custom shaders for neon-lit environments and complex particle systems for atmospheric effects and combat visuals.</p><p>The core gameplay loop was developed using Unreal's Blueprint system for rapid prototyping, with critical performance-intensive components rewritten in C++ for optimization. The game is designed to be highly scalable, running smoothly on a wide range of hardware configurations.</p>",
-    "source_code_link": "https://github.com/your-username/neon-dreams",
-    "live_demo_link": "https://your-username.itch.io/neon-dreams"
+    "id": "university-research-platform",
+    "title": "University Research Collaboration Platform",
+    "tags": ["PHP", "JavaScript", "CSS", "HTML", "Azure"],
+    "long_description": "<p>A platform for university students and researchers to collaborate on projects. Features include user registration, project creation, and collaboration tools.</p>",
+    "source_code_link": "https://github.com/SeopaTebogo20/University-Research-Collaboration-Platform",
+    "live_demo_link": "https://collabnexus-bvgnc7b6bqq0cadp.canadacentral-01.azurewebsites.net/"
   },
   {
-    "id": "ecotracker",
-    "title": "EcoTracker Dashboard",
-    "tags": ["React", "D3.js", "Node.js", "API Integration"],
-    "long_description": "<p>EcoTracker is a powerful data visualization dashboard designed to display real-time environmental data from multiple public APIs. Built with React and D3.js, it offers a highly interactive and intuitive user experience.</p><p>Users can explore data through dynamic charts, maps, and customizable filters, allowing for in-depth analysis of environmental trends. The Node.js backend aggregates and caches data from various sources to ensure high performance and reliability.</p>",
-    "source_code_link": "https://github.com/your-username/ecotracker-dashboard",
-    "live_demo_link": "https://ecotracker-demo.your-domain.com"
-  },
-  {
-    "id": "api-gateway",
-    "title": "API Gateway",
-    "tags": ["Node.js", "Express", "Microservices", "Security"],
-    "long_description": "<p>This project implements a high-performance, scalable API gateway using Node.js and Express. It serves as the single entry point for a microservices-based architecture, providing robust features like authentication, rate limiting, and request/response transformation.</p><p>The gateway is designed for minimal latency and high availability, making it suitable for production environments. It simplifies the client-side code by orchestrating multiple backend services and presenting a unified API.</p>",
-    "source_code_link": "https://github.com/your-username/api-gateway",
+    "id": "mentally-platform",
+    "title": "Mentaly – Mental Health Support Platform",
+    "tags": ["Node.js", "Express.js", "MongoDB", "Gemini AI", "USSD"],
+    "long_description": "<p>Mentaly is a mental health support platform combining a web app, AI-powered chat, wellness tools, mood tracking, and USSD-based booking for accessibility. It is designed to provide emotional support, personalized insights, and seamless access to mental health professionals.</p>",
+    "source_code_link": "https://github.com/Thee-Social-Network/mentally-platform",
     "live_demo_link": null
+  },
+  {
+    "id": "wits-study-buddy",
+    "title": "Wits Study Buddy",
+    "tags": ["Java", "Android", "Azure"],
+    "long_description": "<p>Wits Study Buddy is an academic collaboration platform designed to help university students improve their learning experience through connection, structure, and support. It allows students to find compatible study partners based on shared modules and interests, create or join study groups, schedule group sessions, and track their academic progress over time.</p>",
+    "source_code_link": "https://github.com/TebogoSeopa20/wits-study-buddy",
+    "live_demo_link": "https://wits-buddy-g9esajarfqe3dmh6.southafricanorth-01.azurewebsites.net"
   },
   {
     "id": "portfolio-website",
     "title": "Portfolio Website",
     "tags": ["HTML5", "CSS3", "JavaScript", "UI/UX"],
-    "long_description": "<p>This personal portfolio website was built from the ground up using semantic HTML, modern CSS, and vanilla JavaScript. The goal was to create a lightweight, high-performance, and fully accessible site that showcases my skills and projects.</p><p>It features a clean, responsive design, smooth animations, and a functional contact form. The project demonstrates a strong understanding of frontend fundamentals and a commitment to creating a positive user experience.</p>",
-    "source_code_link": "https://github.com/your-username/portfolio-website",
-    "live_demo_link": "https://your-domain.com"
+    "long_description": "<p>This personal portfolio website was built from the ground up using semantic HTML, modern CSS, and vanilla JavaScript. The goal was to create a lightweight, high-performance, and fully accessible site that showcases my skills and projects.</p>",
+    "source_code_link": "https://github.com/riley-8/my-portfolio",
+    "live_demo_link": "http://localhost:3000/html/index.html"
   }
 ]
