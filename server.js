@@ -6,16 +6,16 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// All static assets are now in the 'public' directory.
 const publicPath = path.join(__dirname, 'public');
 
-// Middleware
 app.use(cors());
-
-// Serve all static files from the 'public' directory
 app.use(express.static(publicPath));
 
-// API endpoint to get project data
+// Explicitly serve index.html for the root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+});
+
 app.get('/projects', (req, res) => {
   const projectsPath = path.join(__dirname, 'projects.json');
   fs.readFile(projectsPath, 'utf8', (err, data) => {
@@ -33,7 +33,6 @@ app.get('/projects', (req, res) => {
   });
 });
 
-// Start Server
 app.listen(port, () => {
   console.log(`✅ Backend server is live and listening on port ${port}`);
 });
