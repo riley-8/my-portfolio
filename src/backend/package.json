@@ -4,8 +4,7 @@
   "description": "Backend for my portfolio",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "install": "npm install"
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
