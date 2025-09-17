@@ -122,38 +122,35 @@ const initContactForm = () => {
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+
+        const formData = new FormData(contactForm);
+
         try {
-            // Visual feedback
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            // Get form values
-            const formData = new FormData(contactForm);
-            const formValues = Object.fromEntries(formData.entries());
-            
-            // Simulate network request
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            // Log to console (replace with actual API call)
-            console.log('Form submission:', formValues);
-            
-            // Success feedback
-            submitButton.textContent = '✓ Sent!';
-            contactForm.reset();
-            
-            // Reset button after delay
-            setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 2000);
-            
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                submitButton.textContent = '✓ Sent!';
+                contactForm.reset();
+            } else {
+                const data = await response.json();
+                throw new Error(data.error || 'Server error');
+            }
         } catch (error) {
-            console.error('Form error:', error);
+            console.error('Form submission error:', error);
             submitButton.textContent = 'Error!';
+        } finally {
             setTimeout(() => {
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
-            }, 2000);
+            }, 4000);
         }
     });
 };
