@@ -1,0 +1,2 @@
+[config]
+command = "C:\home\site\deployments\tools\deploy.cmd"
