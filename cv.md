@@ -1,5 +1,5 @@
 # Kwazi Ngidi
-**South African Citizen | [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/riley-8) | [Portfolio]([https://kwazi-portfolio.azurewebsites.net]))**
+**South African Citizen | [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/riley-8) | [Portfolio]([https://kwazi-portfolio.azurewebsites.net])**
 
 ---
 
