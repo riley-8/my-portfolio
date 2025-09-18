@@ -1,5 +1,5 @@
 # Kwazi Ngidi
-**US Citizen | [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/riley-8) | [Portfolio](https://kwazi-portfolio.azurewebsites.net)**
+**US Citizen | [LinkedIn](https://www.linkedin.com/in/kwazi-ngidi-4076772a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) | [GitHub](https://github.com/riley-8) | [Portfolio](https://kwazi-portfolio-bug6hegkgkgdcvc8aj.southafricanorth-01.azurewebsites.net/)**
 
 ---
 
