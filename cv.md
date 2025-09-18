@@ -1,12 +1,12 @@
 # Kwazi Ngidi
-**US Citizen | [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/riley-8) | [Portfolio](https://kwazi-portfolio.azurewebsites.net)**
+**South African Citizen | [LinkedIn](https://www.linkedin.com/) | [GitHub](https://github.com/riley-8) | [Portfolio](https://kwazi-portfolio.azurewebsites.net)**
 
 ---
 
 ### **EDUCATION**
 
 **University of the Witwatersrand**
-*Bachelor of Science in Computer Science* | *[Start Date] - [End Date]*
+*Bachelor of Science in Computer Science* | *February 2022 - May 2027*
 *Relevant Coursework: Data Structures & Algorithms, Cloud Computing, Software Engineering, AI*
 
 ---
