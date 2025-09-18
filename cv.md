@@ -1,12 +1,12 @@
 # Kwazi Ngidi
-**US Citizen | [LinkedIn](https://www.linkedin.com/in/kwazi-ngidi-4076772a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) | [GitHub](https://github.com/riley-8) | [Portfolio](https://kwazi-portfolio-bug6hegkgkgdcvc8aj.southafricanorth-01.azurewebsites.net/)**
+**South African Citizen | [LinkedIn](https://www.linkedin.com/in/kwazi-ngidi-4076772a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) | [GitHub](https://github.com/riley-8) | [Portfolio](https://kwazi-portfolio-bug6hegkgkgdcvc8aj.southafricanorth-01.azurewebsites.net/)**
 
 ---
 
 ### **EDUCATION**
 
 **University of the Witwatersrand**
-*Bachelor of Science in Computer Science* | *[Start Date] - [End Date]*
+*Bachelor of Science in Computer Science* | *February 2022 - May 2027*
 *Relevant Coursework: Data Structures & Algorithms, Cloud Computing, Software Engineering, AI*
 
 ---
@@ -43,7 +43,7 @@
 
 **Portfolio Website** | *Solo Developer*
 *Node.js, Express.js, HTML5, CSS3, JavaScript, Azure, CI/CD*
-- Built a full-stack portfolio application from scratch, including a custom Node.js backend to dynamically serve project data via a REST API.
+- Built a full-stack portfolio application from scratch, including a custom Node.js backend to a REST API to dynamically serve project data.
 - Designed and implemented a complete CI/CD pipeline using GitHub Actions to automate testing and deployment to Azure App Service.
 
 ---
