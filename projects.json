@@ -1,35 +1,34 @@
 [
-    {
-      "id": "mental-health-platform",
-      "title": "Mentaly – Mental Health Support Platform",
-      "tags": ["Node.js", "Express.js", "MongoDB", "Gemini AI", "USSD"],
-      "long_description": "<p>A mental health platform featuring an AI-powered chat, wellness tools, and mood tracking. It also includes a USSD-based booking system for users without internet access.</p>",
-      "source_code_link": "https://github.com/riley-8/mentaly-backend",
-      "live_demo_link": "https://mentaly.azurewebsites.net/"
-    },
-    {
-        "id": "research-collaboration-platform",
-        "title": "University Research Collaboration Platform",
-        "tags": ["PHP", "JavaScript", "CSS", "HTML", "Azure"],
-        "long_description": "<p>A web platform for university students and researchers to collaborate on projects. It includes features like user registration, project creation, and collaboration tools.</p>",
-        "source_code_link": "https://github.com/riley-8/university-research-platform",
-        "live_demo_link": "https://university-research-platform.azurewebsites.net"
-      },
-    {
-      "id": "wits-study-buddy",
-      "title": "Wits Study Buddy",
-      "tags": ["Java", "Android", "Azure"],
-      "long_description": "<p>A native Android application to help university students find study partners, create study groups, and schedule sessions. It also includes features for user profiles and messaging.</p>",
-      "source_code_link": "https://github.com/TebogoSeopa20/wits-study-buddy",
-      "live_demo_link": "https://wits-buddy-g9esajarfqe3dmh6.southafricanorth-01.azurewebsites.net"
-    },
-    {
-      "id": "portfolio-website",
-      "title": "Portfolio Website",
-      "tags": ["HTML5", "CSS3", "JavaScript", "UI/UX"],
-      "long_description": "<p>This personal portfolio website was built from the ground up using semantic HTML, modern CSS, and vanilla JavaScript. The goal was to create a lightweight, high-performance, and fully accessible site that showcases my skills and projects.</p>",
-      "source_code_link": "https://github.com/riley-8/my-portfolio",
-      "live_demo_link": "https://kwazi-portfolio-bug6hegkgkgdcvc8aj.southafricanorth-01.azurewebsites.net/"
-    }
-  ]
-  
+  {
+    "id": "university-research-platform",
+    "title": "University Research Collaboration Platform",
+    "tags": ["PHP", "JavaScript", "CSS", "HTML", "Azure"],
+    "long_description": "<p>A platform for university students and researchers to collaborate on projects. Features include user registration, project creation, and collaboration tools.</p>",
+    "source_code_link": "https://github.com/SeopaTebogo20/University-Research-Collaboration-Platform",
+    "live_demo_link": "https://collabnexus-bvgnc7b6bqq0cadp.canadacentral-01.azurewebsites.net/"
+  },
+  {
+    "id": "mentally-platform",
+    "title": "Mentaly – Mental Health Support Platform",
+    "tags": ["Node.js", "Express.js", "MongoDB", "Gemini AI", "USSD"],
+    "long_description": "<p>Mentaly is a mental health support platform combining a web app, AI-powered chat, wellness tools, mood tracking, and USSD-based booking for accessibility. It is designed to provide emotional support, personalized insights, and seamless access to mental health professionals.</p>",
+    "source_code_link": "https://github.com/Thee-Social-Network/mentally-platform",
+    "live_demo_link": null
+  },
+  {
+    "id": "wits-study-buddy",
+    "title": "Wits Study Buddy",
+    "tags": ["Java", "Android", "Azure"],
+    "long_description": "<p>Wits Study Buddy is an academic collaboration platform designed to help university students improve their learning experience through connection, structure, and support. It allows students to find compatible study partners based on shared modules and interests, create or join study groups, schedule group sessions, and track their academic progress over time.</p>",
+    "source_code_link": "https://github.com/TebogoSeopa20/wits-study-buddy",
+    "live_demo_link": "https://wits-buddy-g9esajarfqe3dmh6.southafricanorth-01.azurewebsites.net"
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Portfolio Website",
+    "tags": ["HTML5", "CSS3", "JavaScript", "UI/UX"],
+    "long_description": "<p>This personal portfolio website was built from the ground up using semantic HTML, modern CSS, and vanilla JavaScript. The goal was to create a lightweight, high-performance, and fully accessible site that showcases my skills and projects.</p>",
+    "source_code_link": "https://github.com/riley-8/my-portfolio",
+    "live_demo_link": "http://localhost:3000/html/index.html"
+  }
+]
